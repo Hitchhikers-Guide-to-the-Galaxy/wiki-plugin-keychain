@@ -31,6 +31,7 @@
         "summary": "Save the farm machine's clipboard into the Keychain",
         "description": "The value is read on the server with pbpaste \u2014 it is never in the request. It must be one line, at least eight characters and not a link. An existing entry is replaced only with overwrite. Answers with the length saved. If no token.localhost page names the service yet, a registry card is written there (names only) and listed on Token Inventory under New Entries.",
         "x-fedwiki-writes": true,
+        "x-fedwiki-private-only": true,
         "x-fedwiki-context": [
           "status"
         ],
@@ -88,6 +89,7 @@
         "summary": "Copy a Keychain value to the farm machine's clipboard",
         "description": "security find-generic-password -w into pbcopy, on the server. The value never comes back \u2014 only its length. macOS may ask to allow access for entries other apps made.",
         "x-fedwiki-writes": true,
+        "x-fedwiki-private-only": true,
         "x-fedwiki-context": [],
         "requestBody": {
           "required": true,
@@ -128,6 +130,7 @@
         "summary": "Hand a Keychain value to the owner's page, to show briefly",
         "description": "The one operation that returns a value. The page shows it for fifteen seconds and removes it. Owner only, private sites only, never offered to agents.",
         "x-fedwiki-writes": true,
+        "x-fedwiki-private-only": true,
         "x-fedwiki-context": [],
         "requestBody": {
           "required": true,
@@ -168,6 +171,7 @@
         "summary": "Delete one Keychain entry \u2014 cannot be undone",
         "description": "security delete-generic-password for exactly one entry. confirm must repeat the service name. With no account it refuses when the service has more than one entry. The token.localhost card, if any, is kept and gets a dated Deleted line. Owner only, private sites only, never offered to agents.",
         "x-fedwiki-writes": true,
+        "x-fedwiki-private-only": true,
         "x-fedwiki-context": [
           "status"
         ],
