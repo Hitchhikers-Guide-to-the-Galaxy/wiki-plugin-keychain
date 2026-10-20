@@ -1,0 +1,38 @@
+{
+  "name": "wiki-plugin-keychain",
+  "version": "0.1.0",
+  "description": "Password Tool for a laptop wiki: save the clipboard into the macOS login Keychain, list Keychain entries by name, copy a value to the clipboard or reveal it briefly \u2014 the value never touches a page, a URL or a log.",
+  "type": "module",
+  "main": "client/keychain.js",
+  "files": [
+    "client",
+    "pages",
+    "api",
+    "factory.json"
+  ],
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "node --test test/*.test.cjs"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  },
+  "author": "David Bovill",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-keychain.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-keychain/issues"
+  },
+  "homepage": "https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-keychain#readme",
+  "fedwiki": {
+    "api": {
+      "version": 1,
+      "spec": "api/openapi.json",
+      "handlers": "api/handlers.js"
+    }
+  }
+}

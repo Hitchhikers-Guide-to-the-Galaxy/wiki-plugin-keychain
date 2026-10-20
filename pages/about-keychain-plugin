@@ -1,0 +1,104 @@
+{
+  "title": "About Keychain Plugin",
+  "story": [
+    {
+      "type": "markdown",
+      "id": "a99cbfa9abb4b3c8",
+      "text": "The Keychain Plugin is the working part of the [[Password Tool]]: it saves whatever is on this Mac's clipboard into the macOS login Keychain, lists the Keychain's generic passwords by name, copies or briefly reveals a value, and deletes an entry after a second click \u2014 without the value ever being written to a page, a URL, a log, or an AI agent's context."
+    },
+    {
+      "type": "keychain",
+      "id": "6802263e434df847",
+      "text": "KEYCHAIN\nThis live item works only on a Mac's own private wiki. Signed out it lists names; signed in as the owner it can save, copy and reveal."
+    },
+    {
+      "type": "markdown",
+      "id": "feacf750fa2bb283",
+      "text": "# Commands\n\nThe first word of the item text is the command; the remaining lines are shown above the tool."
+    },
+    {
+      "type": "table",
+      "id": "998d70056ca04de2",
+      "text": "| Command | Shows |\n|---|---|\n| KEYCHAIN | Save form and list (the default) |\n| SAVE | Save-from-clipboard form only |\n| LIST | Searchable list with Copy and Reveal only |"
+    },
+    {
+      "type": "markdown",
+      "id": "e09ef82635ffd0c8",
+      "text": "# Prefill\n\nThe save form fills itself from the address bar, names only \u2014 `/view/password-tool#service=example-api-token&account=example&label=Example` \u2014 so an agent can hand you a ready link and never see the key."
+    },
+    {
+      "type": "markdown",
+      "id": "590c61c04353ba20",
+      "text": "# Operations\n\nDeclared in `api/openapi.json` (fedwiki.api v1) and mounted by the farm's API door under `/system/api/keychain/`: `list.json` (GET, names only, the one operation offered to agents), and the writes `save.json`, `copy.json`, `reveal.json` and `delete.json` (which needs the service named twice) \u2014 owner only, private sites only, never offered to agents. The handlers refuse to run anywhere but a Mac. Logs record the action and the name, never a value."
+    },
+    {
+      "type": "markdown",
+      "id": "bf8d58f673432454",
+      "text": "# Repositories\n\n- GitHub \u2014 https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-keychain\n- npm \u2014 not published yet"
+    },
+    {
+      "type": "markdown",
+      "id": "0a2c798db89c4869",
+      "text": "# See\n\n- [[Password Tool]]\n- [[Password Tool Guide]]\n- [[security CLI]]\n- [[Terminal Plugin]]"
+    }
+  ],
+  "journal": [
+    {
+      "type": "create",
+      "item": {
+        "title": "About Keychain Plugin",
+        "story": [
+          {
+            "type": "markdown",
+            "id": "a99cbfa9abb4b3c8",
+            "text": "The Keychain Plugin is the working part of the [[Password Tool]]: it saves whatever is on this Mac's clipboard into the macOS login Keychain, lists the Keychain's generic passwords by name, and copies or briefly reveals a value \u2014 without the value ever being written to a page, a URL, a log, or an AI agent's context."
+          },
+          {
+            "type": "keychain",
+            "id": "6802263e434df847",
+            "text": "KEYCHAIN\nThis live item works only on a Mac, on its own localhost wiki, for the logged-in owner. Anywhere else it explains why and switches itself off."
+          },
+          {
+            "type": "markdown",
+            "id": "feacf750fa2bb283",
+            "text": "# Commands\n\nThe first word of the item text is the command; the remaining lines are shown above the tool."
+          },
+          {
+            "type": "table",
+            "id": "998d70056ca04de2",
+            "text": "| Command | Shows |\n|---|---|\n| KEYCHAIN | Save form and list (the default) |\n| SAVE | Save-from-clipboard form only |\n| LIST | Searchable list with Copy and Reveal only |"
+          },
+          {
+            "type": "markdown",
+            "id": "e09ef82635ffd0c8",
+            "text": "# Prefill\n\nThe save form fills itself from the address bar, names only \u2014 `/view/password-tool#service=example-api-token&account=example&label=Example` \u2014 so an agent can hand you a ready link and never see the key."
+          },
+          {
+            "type": "markdown",
+            "id": "590c61c04353ba20",
+            "text": "# Routes\n\nAll under `/plugin/keychain/`: `status`, `list`, and the POSTs `save`, `copy`, `reveal`. Every route but `status` needs a Mac, the wiki's admin session, and a request from this machine to a `*.localhost` name. Logs record the action and the name, never a value."
+          },
+          {
+            "type": "markdown",
+            "id": "0a2c798db89c4869",
+            "text": "# See\n\n- [[Password Tool]]\n- [[Password Tool Guide]]\n- [[security CLI]]\n- [[Terminal Plugin]]"
+          }
+        ]
+      },
+      "date": 1792499144361,
+      "provenance": "Authored by an AI agent \u2014 Claude Code via the [[fedwiki-create-plugin]] skill, in a dialogue with David Bovill. [https://claude.com/claude-code Claude Code]"
+    },
+    {
+      "type": "add",
+      "id": "bf8d58f673432454",
+      "item": {
+        "type": "markdown",
+        "id": "bf8d58f673432454",
+        "text": "# Repositories\n\n- GitHub \u2014 https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-keychain\n- npm \u2014 not published yet"
+      },
+      "after": "590c61c04353ba20",
+      "date": 1792502662566
+    }
+  ],
+  "plugin": "keychain"
+}
